@@ -13,8 +13,8 @@ function setup() {
 
 X = 640;
 Y = 360;
-Om = 0;
-Plin = 0;
+SpeedX = 1;
+SpeedY = 1;
 
 /**
  * draw
@@ -28,29 +28,27 @@ function draw() {
   fill(100, 100, 255);
   ellipse(X,Y,80,80);
   // teken een cirkel
-  ellipse(X, Y, 80, 80);
 
-  if(Om = 0) {
-    Plin = -1;
-  }
-  
-  if(Om = 1) {
-      Plin = 1;
-  }
+    X = X + SpeedX;
+    Y = Y + SpeedY;
 
-  if(Y = 40) {
-      Om = 1;
-      Y = Y - 1;
-  }
-  
-  if(Y = 680) {
-      Om = 0;
-      Y = Y + 1;
-  }
+    if(X <= 40) {
+        SpeedX = 1;
+        SpeedY = 1;
+    }
 
-    if(40 < Y > 680) {
-      Y = Y + Plin;
-  }
+    if(X >= 1040) {
+        SpeedX = -1;
+        SpeedY = -1;
+    }
 
-  ellipse(X,Y,80,80);
+    if(Y <= 40) {
+        SpeedX = -1;
+        SpeedY = 1;
+    }
+
+    if(Y >= 680) {
+        SpeedX = 1;
+        SpeedY = -1;
+    }
 }
