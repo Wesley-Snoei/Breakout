@@ -5,11 +5,11 @@ class plank(X, Y, W, H) {
     this.H = H;
 
     show() {
-        rect(PlankX, PlankY, W, H)
+        rect(PlankX, PlankY, W, H);
     }
 
-    update() {}
-
+    update() {
+        PlankX = mouseX;
     }
 }
 
@@ -17,7 +17,7 @@ class plank(X, Y, W, H) {
 
 
 
-function setup() {}
+function setup() {
   createCanvas(1280, 720);
 
   background(0, 0, 255);
@@ -27,7 +27,7 @@ BalX = 640;
 BalY = 360;
 SpeedX = 50;
 SpeedY = 20;
-PlankX = MouseX;
+PlankX = mouseX;
 PlankY = 650;
 W = 75;
 H = 20;
