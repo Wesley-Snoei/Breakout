@@ -19,7 +19,7 @@ SpeedY = 30;
 
 function draw() {
 
-  background(0, 0, 255));
+  background(0, 0, 255);
   fill(100, 100, 255);
   ellipse(X,Y,80,80);
 
@@ -31,9 +31,9 @@ function draw() {
         SpeedY = SpeedY * -1;
     }
 
-    if(Y <= 40) || Y >= 680) {
+    if(Y <= 40 || Y >= 680) {
         SpeedX = SpeedX * -1;
         SpeedY = SpeedY * -1;
     }
-    
+
 }
