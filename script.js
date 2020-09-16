@@ -1,20 +1,37 @@
-/**
- * setup
- * de code in deze functie wordt één keer uitgevoerd door
- * de p5 library, zodra het spel geladen is in de browser
- */
-function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
+class plank(X, Y, W, H) {
+    this.PlankX = X;
+    this.PlankY = Y;
+    this.W = W;
+    this.H = H;
 
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+    show() {
+        rect(PlankX, PlankY, W, H)
+    }
+
+    update() {}
+
+    }
 }
 
-X = 640;
-Y = 360;
-SpeedX = 20;
+
+
+
+
+function setup() {}
+  createCanvas(1280, 720);
+
+  background(0, 0, 255);
+}
+
+BalX = 640;
+BalY = 360;
+SpeedX = 50;
 SpeedY = 20;
+PlankX = MouseX;
+PlankY = 650;
+W = 75;
+H = 20;
+
 
 
 function draw() {
