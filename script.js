@@ -13,8 +13,8 @@ function setup() {
 
 X = 640;
 Y = 360;
-SpeedX = 30;
-SpeedY = 30;
+SpeedX = 20;
+SpeedY = 20;
 
 
 function draw() {
