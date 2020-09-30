@@ -5,41 +5,71 @@ function setup() {
 }
 
 
-balX = 640;
-balY = 360;
-speedX = 50;
-speedY = 20;
-plusX = 0;
-plusY = 0;
 
-class PlusDing {
-    constructor(x, y) {
-        this.x = plusX;
-        this.y = plusY
+class spelElement {
+    x;
+    y;
+
+    constructor(_x,_y) {
+        this.x = _x;
+        this.y = _y;
     }
 }
+
+
+
+class bal extends spelElement {
+    speedX;
+    speedY;
+
+    contructor(_x, _y, _speedX, _speedY) {
+        super(_x, _y);
+        this.speedX = _speedX;
+        this.speedY = _speedY;
+    }
+
+    show() {
+        ellipse(_x, _y, 80, 80);
+    }
+
+    update() {
+        _x = _x + _speedX;
+        _y = _y + _speedY;
+    }
+}
+
+class blok extends spelElement {
+    w;
+    l;
+
+    constructor(_x, _y, _w, _l) {
+        super(_x, _y);
+        this.w = _w;
+        this.l = _l;
+    }
+
+    show() {
+        rect(_x, _y, _w, _l);
+    }
+}
+
+
 
 function draw() {
 
   background(0, 0, 255);
   fill(100, 100, 255);
-  ellipse(balX, balY, 80, 80);
 
-    balX = balX + speedX;
-    balY = balY + speedY;
+  var ballen = [new bal(80, 160, 1, 1)];
+  var blokken = [new blok(500, 500, 70, 130)];
 
-    if(balX <= 40 || balY >= 1040) {
-        speedX = speedX * -1;
-        speedY = speedY * -1;
-    }
+  for(var i = 0; i < 0; i++) {
+      show().ballen[i];
+      update().ballen[i];
+  }
 
-    if(Y <= 40 || Y >= 680) {
-        speedX = speedX * -1;
-        speedY = speedY * -1;
-    }
-
-    for(var i = 0; i < plusjes.length; i++) [
-        show.plusjes[i];
-    ]
+  for(var i = 0; i < 0; i++) {
+      show().blokken[i];
+  }
 
 }
