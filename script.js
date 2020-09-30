@@ -33,9 +33,21 @@ class bal extends spelElement {
     }
 
     update() {
-        _x = _x + _speedX;
-        _y = _y + _speedY;
+        this.x = this.x + this.speedX;
+        this.y = this.y + this.speedY;
+
+        if(this.x <= 40 || this.x >= 1040) {
+         this.speedX = this.speedX * -1;
+         this.peedY = this.peedY * -1;
+        }
+
+        if(this.y <= 40 || this.y >= 1040) {
+         this.speedX = this.speedX * -1;
+         this.speedY = this.speedY * -1;
+       }
+
     }
+    
 }
 
 class blok extends spelElement {
@@ -64,12 +76,12 @@ function draw() {
   var blokken = [new blok(500, 500, 70, 130)];
 
   for(var i = 0; i < 0; i++) {
-      show().ballen[i];
-      update().ballen[i];
+      ballen[i].show();
+      ballen[i].update();
   }
 
   for(var i = 0; i < 0; i++) {
-      show().blokken[i];
+      blokken[i].show();
   }
 
 }
