@@ -6,13 +6,18 @@ function setup() {
 
 
 
-class spelElement {
+class SpelElement {
+
     x;
     y;
+    w;
+    l;
 
-    constructor(_x,_y) {
+    constructor(_x, _y, _w, _l) {
         this.x = _x;
         this.y = _y;
+        this.w = _w;
+        this.l = _l;
     }
 }
 
@@ -22,14 +27,14 @@ class bal extends spelElement {
     speedX;
     speedY;
 
-    contructor(_x, _y, _speedX, _speedY) {
-        super(_x, _y);
+    contructor(_x, _y, _w, _l, _speedX, _speedY) {
+        super(_x, _y, _w, _l);
         this.speedX = _speedX;
         this.speedY = _speedY;
     }
 
     show() {
-        ellipse(_x, _y, 80, 80);
+        ellipse(_x, _y, _w, _l);
     }
 
     update() {
@@ -55,9 +60,7 @@ class blok extends spelElement {
     l;
 
     constructor(_x, _y, _w, _l) {
-        super(_x, _y);
-        this.w = _w;
-        this.l = _l;
+        super(_x, _y, _w, _l);
     }
 
     show() {
@@ -66,14 +69,14 @@ class blok extends spelElement {
 }
 
 
+var ballen = [new bal(80, 160, 80, 80, 1, 1)];
+var blokken = [new blok(500, 500, 70, 130), new blok(300, 300, 100, 100)];
+
 
 function draw() {
 
   background(0, 0, 255);
   fill(100, 100, 255);
-
-  var ballen = [new bal(80, 160, 1, 1)];
-  var blokken = [new blok(500, 500, 70, 130)];
 
   for(var i = 0; i < 0; i++) {
       ballen[i].show();
